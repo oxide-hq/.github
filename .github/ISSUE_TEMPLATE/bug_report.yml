@@ -1,0 +1,44 @@
+name: Bug report
+description: Something doesn't work the way it should.
+labels: [bug, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please search existing issues first.
+        **Security vulnerabilities must not be reported here** — see the security policy.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: The smallest code (or a link to a repository) that reproduces the problem.
+      render: rust
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Crate version or commit
+      placeholder: oxide-http 0.1.0 / main@abc1234
+    validations:
+      required: true
+  - type: input
+    id: rust-version
+    attributes:
+      label: Rust version
+      description: Output of `rustc --version`.
+      placeholder: rustc 1.99.1
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Compiler errors or logs
+      render: text
